@@ -1,7 +1,20 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    
+    <label for="">Ingresa la contraseña</label> <br>
+    <input v-model="inputPassword" type="password" name="" value=""> <br>
+    <button :disabled="validatePassword(inputPassword)" @click="goToNewUrl(inputPassword)" type="button" name="button">
+      Descargar documento
+    </button>
+    <button :disabled="validatePassword(inputPassword)" @click="goToNewUrl(inputPassword)" type="button" name="button">
+      Descargar documento 2
+    </button>
+    <button :disabled="validatePassword(inputPassword)" @click="goToNewUrl(inputPassword)" type="button" name="button">
+      Descargar documento 3
+    </button>
+    <button :disabled="validatePassword(inputPassword)" @click="goToNewUrl(inputPassword)" type="button" name="button">
+      Descargar documento 4
+    </button>
   </div>
 </template>
 
@@ -10,6 +23,26 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data: function () {
+    return {
+      inputPassword: ''
+    }
+  },
+  methods: {
+    validatePassword(password) {
+      if (password != 'Camilo') {
+        return true;
+      }
+      else if (password != 'Camilo') {
+        return false;
+      }
+    },
+    goToNewUrl (password) {
+      if (password === 'Camilo') {
+        window.location.href = 'https://vuejs.org/v2/guide/components.html'
+      }
+    }
   }
 }
 </script>
