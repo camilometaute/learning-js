@@ -9,13 +9,14 @@
     font-size: 6rem;
     font-weight: normal;
     span.typed-text {
-      color: #D2B94B;
+      color: lightgreen;
     }
     span.cursor {
       display: inline-block;
       margin-left: 3px;
       width: 4px;
-      background-color: #fff;
+      height: 80px;
+      background-color: black;
       animation: cursorBlink 1s infinite;
     }
     span.cursor.typing {
@@ -23,7 +24,7 @@
     }
   }
   @keyframes cursorBlink {
-    49% { background-color: #fff; }
+    49% { background-color: black; }
     50% { background-color: transparent; }
     99% { background-color: transparent; }
   }
