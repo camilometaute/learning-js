@@ -15,7 +15,7 @@ export default {
       typeValue: '',
       typeStatus: false,
       typeArray: ['fun', 'awesome', 'a journey', 'life'],
-      typingSpeed: 200,
+      typingSpeed: 300,
       erasingSpeed: 100,
       newTextDelay: 2000,
       typeArrayIndex: 0,
@@ -24,11 +24,18 @@ export default {
   },
   methods: {
       typeText() {
+        // si index es menor al .lenght de cada palabra
         if(this.charIndex < this.typeArray[this.typeArrayIndex].length) {
+          // si es diferente a typeStatus
           if(!this.typeStatus)
+          // cambiamos typeStatus por true
             this.typeStatus = true;
+
+          // almacenamos en typeValue la primera letra de la primera palabra del arrya
           this.typeValue += this.typeArray[this.typeArrayIndex].charAt(this.charIndex);
+          // sumamos a charIndex 1
           this.charIndex += 1;
+          // con la velocidad de typingSpeed ejecuteme otra vez la función/metodo
           setTimeout(this.typeText, this.typingSpeed);
         }
         else {
@@ -45,9 +52,13 @@ export default {
           setTimeout(this.eraseText, this.erasingSpeed);
         }
         else {
+          // como ya borró, debería poner el status en false
           this.typeStatus = false;
+          // suma 1 al tyleArrayIndex para recorrerlo
           this.typeArrayIndex += 1;
+          // compara si el index del array es >= al lenght del array
           if(this.typeArrayIndex >= this.typeArray.length)
+          // Si es >= 0 lo devuelve a 0
             this.typeArrayIndex = 0;
           setTimeout(this.typeText, this.typingSpeed + 1000);
         }
