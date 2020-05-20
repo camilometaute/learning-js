@@ -31,7 +31,7 @@ export default {
           // cambiamos typeStatus por true
             this.typeStatus = true;
 
-          // almacenamos en typeValue la primera letra de la primera palabra del arrya
+          // almacenamos en typeValue la primera letra de la primera palabra del array
           this.typeValue += this.typeArray[this.typeArrayIndex].charAt(this.charIndex);
           // sumamos a charIndex 1
           this.charIndex += 1;

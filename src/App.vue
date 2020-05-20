@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h2>Training JS with objects {{person.role}} {{person.name}} {{person.age}} {{person.bikes.moto1}} {{person.bikes.moto2}}</h2>
     <TypeAutomatic/>
     <HelloWorld msg="Descarga este documento"/> <br>
   </div>
@@ -11,6 +12,19 @@ import TypeAutomatic from './components/TypeAutomatic.vue'
 
 export default {
   name: 'app',
+  data: function() {
+    return {
+      person: {
+        name: 'Camilo',
+        role: 'Designer',
+        age: 30,
+        bikes: {
+          moto1 : 'Yamaha',
+          moto2 : 'Hero'
+        }
+      }
+    }
+  },
   components: {
     HelloWorld,
     TypeAutomatic
