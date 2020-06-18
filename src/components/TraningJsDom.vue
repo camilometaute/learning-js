@@ -19,6 +19,8 @@
         Stop here coordinates</span>
         <!-- listening keyboard events -->
     </div>
+    <input type="text" name="" placeholder="name" v-model="name">
+    <p>{{name}}</p>
   </div>
 </template>
 
@@ -27,6 +29,7 @@ export default {
   name: 'VueDom',
   data: function() {
     return {
+      name: '',
       hello: 'Hello world',
       link: 'http://google.com',
       counter: 0,
