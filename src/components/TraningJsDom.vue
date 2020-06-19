@@ -4,10 +4,11 @@
     {{sayHello()}}</span>
 
     <br>
-    <button v-on:click="decrease(5)">-</button>
-    <button v-on:click="reset">Reset</button>
-    <button v-on:click="increase(5)">+</button>
+    <button v-on:click="counter--">-</button>
+    <button v-on:click="counter = 0">Reset</button>
+    <button v-on:click="counter++">+</button>
     <p>{{counter}}</p>
+    <p>{{checkResult()}}</p>
     <br>
     <div
       style="width: 100%; height: 30vh;background-color: #fafafa; display: flex; align-items: center; justify-content:center; flex-direction: column; font-size: 2.6rem;"
@@ -37,15 +38,20 @@ export default {
       y: 0
     }
   },
+  watch: {
+    counter: function() {
+      let vueInstance = this;
+      setTimeout(function(){
+        vueInstance.counter = 0
+      }, 3000);
+    }
+  },
   methods: {
     sayHello: function() {
       return this.hello;
     },
-    increase: function(value) {
-      this.counter += value;
-    },
-    decrease: function(value) {
-      this.counter -= value;
+    checkResult: function() {
+      return this.counter > 5 ? 'Great' : 'Bad'
     },
     reset: function() {
       this.counter = 0;
