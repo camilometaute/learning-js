@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <h4>Larning map with JS <span @click="mapElement">mapElement</span> </h4>
+
+    <TraningJsDom/>
     <TypeAutomatic/>
     <HelloWorld msg="Descarga este documento"/> <br>
   </div>
@@ -9,12 +11,15 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import TypeAutomatic from './components/TypeAutomatic.vue'
+import TraningJsDom from './components/TraningJsDom.vue'
 
 export default {
   name: 'app',
   methods: {
+    sayHello: function() {
+      return this.title;
+    },
     mapElement() {
-      // set
       const score = 200;
 
       const myScore = new Map();
@@ -32,7 +37,8 @@ export default {
   },
   components: {
     HelloWorld,
-    TypeAutomatic
+    TypeAutomatic,
+    TraningJsDom
   }
 }
 </script>
