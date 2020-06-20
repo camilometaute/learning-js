@@ -22,6 +22,27 @@
     </div>
     <input type="text" name="" placeholder="name" v-model="name">
     <p>{{name}}</p>
+    <div class="colors-interactive">
+      <div
+        class="colors-interactive__box"
+        @click="toggleColorRed = !toggleColorRed"
+        :class="{'colors-interactive__red' : toggleColorRed}">
+      </div>
+
+      <div
+        class="colors-interactive__box"
+        @click="toggleColorBlue = !toggleColorBlue"
+        :class="{'colors-interactive__blue' : toggleColorBlue}"
+      >
+      </div>
+
+      <div
+        class="colors-interactive__box"
+        @click="toggleColorGreen = !toggleColorGreen"
+        :class="{'colors-interactive__green' : toggleColorGreen }"
+      >
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,7 +56,10 @@ export default {
       link: 'http://google.com',
       counter: 0,
       x: 0,
-      y: 0
+      y: 0,
+      toggleColorRed: false,
+      toggleColorBlue: false,
+      toggleColorGreen: false
     }
   },
   watch: {
