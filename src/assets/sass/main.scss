@@ -1,29 +1,56 @@
 .container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colors-interactive {
+  width: 100%;
+  height: 18vh;
+  display: flex;
+  margin-bottom: 1.4rem;
+
+  &__box {
+    background-color: #999;
+    border-radius: .4rem;
+    flex: 1;
+    margin: 0 1.2rem;
   }
-  h1 {
-    font-size: 6rem;
-    font-weight: normal;
-    span.typed-text {
-      color: #D2B94B;
-    }
-    span.cursor {
-      display: inline-block;
-      margin-left: 3px;
-      width: 4px;
-      background-color: #fff;
-      animation: cursorBlink 1s infinite;
-    }
-    span.cursor.typing {
-      animation: none;
-    }
+
+  &__red {
+    background-color: red;
   }
-  @keyframes cursorBlink {
-    49% { background-color: #fff; }
-    50% { background-color: transparent; }
-    99% { background-color: transparent; }
+
+  &__blue {
+    background-color: blue;
   }
+
+  &__green {
+    background-color: green;
+  }
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: normal;
+  span.typed-text {
+    color: #D2B94B;
+  }
+  span.cursor {
+    display: inline-block;
+    margin-left: 3px;
+    width: 4px;
+    background-color: #fff;
+    animation: cursorBlink 1s infinite;
+  }
+  span.cursor.typing {
+    animation: none;
+  }
+}
+@keyframes cursorBlink {
+  49% { background-color: #fff; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+}
