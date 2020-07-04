@@ -1,5 +1,14 @@
 <template>
   <div>
+    <ul >
+      <li v-for="(item, index) in names" :key="item"> {{index}} {{item.name}}</li>
+    </ul>
+    <div v-if="hiddenElement">
+      <h4>Element to toggle 1</h4>
+      <h5>Element to toggle 2</h5>
+
+    </div>
+    <button @click="hiddenElement = !hiddenElement">Toggle Event</button>
     <span style="display: block">Training vue DOM
     {{sayHello()}}</span>
 
@@ -32,17 +41,24 @@
       <div
         class="colors-interactive__box"
         @click="toggleColorBlue = !toggleColorBlue"
-        :class="{'colors-interactive__blue' : toggleColorBlue}"
+        :class="InputColor"
       >
       </div>
 
       <div
         class="colors-interactive__box"
         @click="toggleColorGreen = !toggleColorGreen"
-        :class="{'colors-interactive__green' : toggleColorGreen }"
+        :class="toggleClasses"
+      >
+      </div>
+      <div
+        class="colors-interactive__box"
+        :style="myStyle"
       >
       </div>
     </div>
+    <input placeholder="Which color do you want" v-model="InputColor">
+    <input placeholder="Which width" v-model="width">
   </div>
 </template>
 
@@ -59,7 +75,28 @@ export default {
       y: 0,
       toggleColorRed: false,
       toggleColorBlue: false,
-      toggleColorGreen: false
+      toggleColorGreen: false,
+      InputColor : '',
+      width : 40,
+      hiddenElement: true,
+      names: [
+        {name: 'camilo', age: 31, color: 'Yellow'},
+        {name: 'Cristhian', age: 32, color: 'Blue'},
+        {name: 'El MIlo', age: 33, color: 'Red'}
+      ]
+    }
+  },
+  computed: {
+    toggleClasses: function() {
+      return {
+        'colors-interactive__green' : this.toggleColorGreen
+      }
+    },
+    myStyle: function() {
+      return {
+        backgroundColor : this.InputColor,
+        flex : '0 0' + this.width + '%'
+      };
     }
   },
   watch: {
