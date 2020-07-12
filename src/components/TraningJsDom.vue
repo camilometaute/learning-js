@@ -1,5 +1,13 @@
 <template>
   <div>
+    <h2>Bikes</h2>
+    <ul>
+      <li v-for="(bike, index) in bikes" :key="bike">
+        {{bike.type}} - {{bike.cc}} - {{bike.color}} - {{bike.brand}} {{index}}
+      </li>
+    </ul>
+    <button @click="bikes.push({type: 'Motard', cc: '450cc', color: 'blue', brand: 'Yamaha YZ'},)">Add to the array</button>
+    <h2>Names</h2>
     <ul >
       <li v-for="(item, index) in names" :key="item"> {{index}} {{item.name}}</li>
     </ul>
@@ -83,6 +91,11 @@ export default {
         {name: 'camilo', age: 31, color: 'Yellow'},
         {name: 'Cristhian', age: 32, color: 'Blue'},
         {name: 'El MIlo', age: 33, color: 'Red'}
+      ],
+      bikes: [
+        {type: 'Naked', cc: '850cc', color: 'gray', brand: 'MT 09'},
+        {type: 'Motocross', cc: '125cc', color: 'blue', brand: 'YZ'},
+        {type: 'Sport', cc: '99cc', color: 'gray/black', brand: 'Eco Deluxe'},
       ]
     }
   },
