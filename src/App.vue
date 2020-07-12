@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h4>Larning map with JS <span @click="mapElement">mapElement</span> </h4>
-
+    <MiniGame/>
     <TraningJsDom/>
     <TypeAutomatic/>
     <HelloWorld msg="Descarga este documento"/> <br>
@@ -12,6 +12,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TypeAutomatic from './components/TypeAutomatic.vue'
 import TraningJsDom from './components/TraningJsDom.vue'
+import MiniGame from './components/MiniGame.vue'
 
 export default {
   name: 'app',
@@ -38,7 +39,8 @@ export default {
   components: {
     HelloWorld,
     TypeAutomatic,
-    TraningJsDom
+    TraningJsDom,
+    MiniGame
   }
 }
 </script>
