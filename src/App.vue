@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h4>Larning map with JS <span @click="mapElement">mapElement</span> </h4>
+    <PasswordValidate/>
     <MiniGame/>
     <TraningJsDom/>
     <TypeAutomatic/>
@@ -13,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import TypeAutomatic from './components/TypeAutomatic.vue'
 import TraningJsDom from './components/TraningJsDom.vue'
 import MiniGame from './components/MiniGame.vue'
+import PasswordValidate from './components/PasswordValidate.vue'
 
 export default {
   name: 'app',
@@ -40,7 +42,8 @@ export default {
     HelloWorld,
     TypeAutomatic,
     TraningJsDom,
-    MiniGame
+    MiniGame,
+    PasswordValidate
   }
 }
 </script>
