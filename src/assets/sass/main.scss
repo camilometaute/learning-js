@@ -6,6 +6,21 @@
   align-items: center;
 }
 
+.password-validate {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
+.has_required {
+    text-decoration: line-through;
+    color:#689868;
+}
+
 .colors-interactive {
   width: 100%;
   height: 18vh;

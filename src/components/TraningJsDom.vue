@@ -1,72 +1,7 @@
 <template>
   <div>
     <h2>Bikes</h2>
-    <ul>
-      <li v-for="(bike, index) in bikes" :key="bike">
-        {{bike.type}} - {{bike.cc}} - {{bike.color}} - {{bike.brand}} {{index}}
-      </li>
-    </ul>
-    <button @click="bikes.push({type: 'Motard', cc: '450cc', color: 'blue', brand: 'Yamaha YZ'},)">Add to the array</button>
-    <h2>Names</h2>
-    <ul >
-      <li v-for="(item, index) in names" :key="item"> {{index}} {{item.name}}</li>
-    </ul>
-    <div v-if="hiddenElement">
-      <h4>Element to toggle 1</h4>
-      <h5>Element to toggle 2</h5>
-
-    </div>
-    <button @click="hiddenElement = !hiddenElement">Toggle Event</button>
-    <span style="display: block">Training vue DOM
-    {{sayHello()}}</span>
-
-    <br>
-    <button v-on:click="counter--">-</button>
-    <button v-on:click="counter = 0">Reset</button>
-    <button v-on:click="counter++">+</button>
-    <p>{{counter}}</p>
-    <p>{{checkResult()}}</p>
-    <br>
-    <div
-      style="width: 100%; height: 30vh;background-color: #fafafa; display: flex; align-items: center; justify-content:center; flex-direction: column; font-size: 2.6rem;"
-      v-on:mousemove="updateCoordinates">
-      <p style="margin: 1rem 0 2rem 0;">Coordinates {{x}} {{y}}</p>
-      <span
-        style="background-color: pink;"
-        v-on:mousemove.stop="">
-        Stop here coordinates</span>
-        <!-- listening keyboard events -->
-    </div>
-    <input type="text" name="" placeholder="name" v-model="name">
-    <p>{{name}}</p>
-    <div class="colors-interactive">
-      <div
-        class="colors-interactive__box"
-        @click="toggleColorRed = !toggleColorRed"
-        :class="{'colors-interactive__red' : toggleColorRed}">
-      </div>
-
-      <div
-        class="colors-interactive__box"
-        @click="toggleColorBlue = !toggleColorBlue"
-        :class="InputColor"
-      >
-      </div>
-
-      <div
-        class="colors-interactive__box"
-        @click="toggleColorGreen = !toggleColorGreen"
-        :class="toggleClasses"
-      >
-      </div>
-      <div
-        class="colors-interactive__box"
-        :style="myStyle"
-      >
-      </div>
-    </div>
-    <input placeholder="Which color do you want" v-model="InputColor">
-    <input placeholder="Which width" v-model="width">
+    
   </div>
 </template>
 
